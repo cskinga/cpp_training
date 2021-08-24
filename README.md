@@ -5,7 +5,7 @@
 3. Így nevezd el a projektet: {forrás}\_{fejezet száma}\_{feladat sorszáma}
 4. A Solution mezõben állítsd be, hogy Add to solution!
 
-Példaként létrehoztam a feladatgy_I_1.cpp projektet.
+Példaként létrehoztam a feladatgy_I_1 projektet.
 
 Ahhoz, hogy tetszõlegesen tudd futtatni a projekteket a kijelölt fájl alapján:
 1. Nyisd meg a Solution Explorer-t!
