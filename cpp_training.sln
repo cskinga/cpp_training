@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Readme", "Readme", "{A1942E
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "feladatgy_I_1", "feladatgy_I_1\feladatgy_I_1.vcxproj", "{564B265A-1FD0-481E-B823-4882AD43EE99}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "valami", "valami\valami.vcxproj", "{799A4EED-BEF7-4CAE-AB32-AF192C19C19B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -26,6 +28,14 @@ Global
 		{564B265A-1FD0-481E-B823-4882AD43EE99}.Release|x64.Build.0 = Release|x64
 		{564B265A-1FD0-481E-B823-4882AD43EE99}.Release|x86.ActiveCfg = Release|Win32
 		{564B265A-1FD0-481E-B823-4882AD43EE99}.Release|x86.Build.0 = Release|Win32
+		{799A4EED-BEF7-4CAE-AB32-AF192C19C19B}.Debug|x64.ActiveCfg = Debug|x64
+		{799A4EED-BEF7-4CAE-AB32-AF192C19C19B}.Debug|x64.Build.0 = Debug|x64
+		{799A4EED-BEF7-4CAE-AB32-AF192C19C19B}.Debug|x86.ActiveCfg = Debug|Win32
+		{799A4EED-BEF7-4CAE-AB32-AF192C19C19B}.Debug|x86.Build.0 = Debug|Win32
+		{799A4EED-BEF7-4CAE-AB32-AF192C19C19B}.Release|x64.ActiveCfg = Release|x64
+		{799A4EED-BEF7-4CAE-AB32-AF192C19C19B}.Release|x64.Build.0 = Release|x64
+		{799A4EED-BEF7-4CAE-AB32-AF192C19C19B}.Release|x86.ActiveCfg = Release|Win32
+		{799A4EED-BEF7-4CAE-AB32-AF192C19C19B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
