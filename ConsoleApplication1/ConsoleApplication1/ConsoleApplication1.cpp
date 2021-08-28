@@ -7,6 +7,8 @@
 
 using namespace std;
 
+
+
 int main()
 {
     //std::cout << "Hello World!\n";
@@ -14,7 +16,7 @@ int main()
     string a;
     printf("FGy 20.feladat\n");
     getline(cin, a);
-    if (a[0] <= 'a' && a[0] <= 'z')
+    if (a[0] >= 'a' && a[0] <= 'z')
     {
         a[0] = a[0] + ('A' - 'a');
     }
@@ -94,7 +96,7 @@ int main()
     }
     else
     {
-        printf("a harom szam kozul a legnagyobb ertek ketszer is elofordul.\n");
+        printf("a harom szam kozul a legnagyobb ertek tobszor is elofordul.\n");
     }
     printf("\n");
 
