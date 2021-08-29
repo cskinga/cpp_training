@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <cmath>
 #include <ctime>
 
 using namespace std;
@@ -51,6 +52,31 @@ void Fibonacci(int m)
     }
     cout << "\n";
 }
+
+//FGy II. 2/.feladat
+void rombusz(int k)
+{
+
+    if (k % 2 != 0)
+    {
+        int l = (k / 2) + 1;
+        int d;
+        for (int i = 0; i < l; i++)
+        {
+            for (int j = 0; j <= i; j++)
+            {
+                d = ((k - 1) / 2) - i;
+                for (int o = 1; o <= d - j; o++)
+                {
+                    cout << " ";
+                }
+                cout << "* ";
+            }
+            cout << "\n";
+        }
+    }
+}
+
 int main()
 {
     //std::cout << "Hello World!\n";
@@ -68,6 +94,8 @@ int main()
     Fibonacci(1);
     Fibonacci(0);
     cout << "\n";
+
+    rombusz(5);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
