@@ -3,14 +3,15 @@
 
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
 #include <ctime>
 
 using namespace std;
 
 //FGy II. 5.feladat
-void negyzetszam(int K, int n) 
+void negyzetszam(int K) 
 {
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= K; i++)
     {
         if (K > i * i)
         {
@@ -31,7 +32,6 @@ void Fibonacci(int m)
         cout << a;
         cout << " ";
         cout << b;
-        cout << " ";
     }
     else if (m == 1)
     {
@@ -54,27 +54,39 @@ void Fibonacci(int m)
 }
 
 //FGy II. 2/.feladat
-void rombusz(int k)
+void rombusz(int l)
 {
-
-    if (k % 2 != 0)
-    {
-        int l = (k / 2) + 1;
         int d;
+        int k = l - 1;
         for (int i = 0; i < l; i++)
         {
+            d = k - i;
+            for (int o = 0; o < d ; o++)
+            {
+                cout << "  ";
+            }
             for (int j = 0; j <= i; j++)
             {
-                d = ((k - 1) / 2) - i;
-                for (int o = 1; o <= d - j; o++)
-                {
-                    cout << " ";
-                }
-                cout << "* ";
+
+                cout << "*   ";
             }
             cout << "\n";
         }
-    }
+        for (int i = k - 1; i >= 0 ; i--)
+        {
+            d = k - i;
+            for (int o = 0; o < d; o++)
+            {
+                cout << "  ";
+            }
+            for (int j = 0; j <= i; j++)
+            {
+
+                cout << "*   ";
+            }
+            cout << "\n";
+        }
+        cout << "\n";
 }
 
 int main()
@@ -84,9 +96,9 @@ int main()
 
     //FGy II. 5.feladat
     cout << "FGy II. 5.feladat:\n";
-    negyzetszam(10, 10); //ez jó
-    negyzetszam(100, 200); // ez jó
-    negyzetszam(100, 7); //ez nem jó
+    negyzetszam(10); //ez jó
+    negyzetszam(49); // ez jó
+    negyzetszam(100); //ez nem jó
     cout << "\n";
     //FGy II. 7.feladat
     cout << "FGy II. 7.feladat:\n";
@@ -96,6 +108,13 @@ int main()
     cout << "\n";
 
     rombusz(5);
+    rombusz(6);
+    rombusz(7);
+    cout << "\n";
+    //FGy II. 6.feladat
+    srand(time(NULL));
+    int q = rand() % 10 + 1;
+    cout << q;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
