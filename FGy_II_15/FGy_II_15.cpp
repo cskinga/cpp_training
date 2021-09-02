@@ -1,41 +1,34 @@
-// monogramm.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//FGy. II. 13.feladat
+// FGy_II_15.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
 
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-string monogramm_szerkesztes(string nev)
+string kezdobetu_naggya_alakitasa(string szoveg)
 {
-    string monogramm;
     int j = 0;
-    if (nev[j] >= 'a' && nev[j] <= 'z' || nev[j] >= 'A' && nev[j] <= 'Z')
+    if (szoveg[j] >= 'a' && szoveg[j] <= 'z')
     {
-        monogramm = nev[j];
-        cout << monogramm;
+        szoveg[j] = szoveg[j] + 'A' - 'a';
     }
-    for (int i = 1; i < nev.size(); i++)
+    for (int i = 1; i < szoveg.size(); i++)
     {
-        if ((nev[i] >= 'a' && nev[i] <= 'z' || nev[i] >= 'A' && nev[i] <= 'Z') && (nev[i - 1] == ' ' || nev[i - 1] == '\t'))
+        if (szoveg[i] >= 'a' && szoveg[i] <= 'z' && szoveg[i - 1] == ' ')
         {
-
-            monogramm = nev[i];
-            cout << monogramm;
+            szoveg[i] = szoveg[i] + 'A' - 'a';
         }
     }
-    cout << "\n";
-    return monogramm;
+    return szoveg;
 }
 
 int main()
 {
     //std::cout << "Hello World!\n";
-    monogramm_szerkesztes(" Horvath Balint Akos");
-    monogramm_szerkesztes("Horvath Balint Akos");
-    monogramm_szerkesztes(" horvath Balint akos");
-    monogramm_szerkesztes("Horvath balint Akos");
-
+    string szoveg;
+    getline(cin, szoveg);
+    cout << kezdobetu_naggya_alakitasa(szoveg);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

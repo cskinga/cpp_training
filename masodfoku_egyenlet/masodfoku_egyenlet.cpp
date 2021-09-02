@@ -11,20 +11,15 @@ void masodfoku_egyenletek_kiirasa(int a, int b, int c)
     float x1, x2;
     x1 = (-b + sqrt(pow(b, 2) - 4 * a * c)) / (2 * a);
     x2 = (-b - sqrt(pow(b, 2) - 4 * a * c)) / (2 * a);
-    if(a > 0 && a < 10 && b > 0 && b < 10 && c > 0 && c < 10)
+    if (a > 0 && a < 10 && b > 0 && b < 10 && c > 0 && c < 10)
     {
         if (x1 == x2)
         {
             cout << a << " * x^(2) + " << b << " * x + " << c << " = 0";
             cout << "\n";
         }
-    }
-    else
-    {
-        cout << "nem ezt kerte a feladat!!!!";
-        cout << "\n";
-    }
 
+    }
 }
 
 int main()
@@ -38,20 +33,13 @@ int main()
     masodfoku_egyenletek_kiirasa(5, 10, 5);*/
 
     int d, e, f;
-    float x1, x2;
     for (d = 1; d < 10; d++)
     {
         for (e = 1; e < 10; e++)
         {
             for (f = 1; f < 10; f++)
             {
-                x1 = (-e + sqrt(pow(e, 2) - 4 * d * f)) / (2 * d);
-                x2 = (-e - sqrt(pow(e, 2) - 4 * d * f)) / (2 * d);
-                if (x1 == x2)
-                {
-                    cout << d << " * x^(2) + " << e << " * x + " << f << " = 0";
-                    cout << "\n";
-                }
+                masodfoku_egyenletek_kiirasa(d, e, f);
             }
         }
     }

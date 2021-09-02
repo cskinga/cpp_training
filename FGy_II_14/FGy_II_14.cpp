@@ -1,26 +1,34 @@
-// szamsor.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//FGy. II. 11.feladat
+// FGy_II_14.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
 
 #include <iostream>
-#include <ctime>
+#include <string>
 
 using namespace std;
 
-int tomb_feltoltese(int a)
+string bekert_szoveg(string szoveg)
 {
-    for (int i = 0; i < 99; i++)
+    string seged = szoveg;
+    for (int i = 0; i <= seged.size(); i++)
     {
-        srand(time(NULL));
-        a = rand() % 51;
-        cout << a << " ";
+        if (seged[i] == 'a' && seged[i - 1] == 'm' && seged[i + 2] == 'l' && seged[i + 3] == 'a')
+        {
+            seged[i] == 'k';
+            seged[i + 1] == 'o';
+            seged[i + 2] == 'r';
+            seged[i + 3] == 't';
+            seged[i + 4] == 'e';
+        }
     }
-    return a;
+    return seged;
 }
 
 int main()
 {
     //std::cout << "Hello World!\n";
-    tomb_feltoltese(1);
+    string szoveg;
+    getline(cin, szoveg);
+    cout << bekert_szoveg(szoveg);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
