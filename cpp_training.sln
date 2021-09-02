@@ -34,6 +34,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FGy_II_14", "FGy_II_14\FGy_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FGy_II_15", "FGy_II_15\FGy_II_15.vcxproj", "{CC55E353-6AA2-420F-B233-E950A35BAB01}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FGy_II_16", "FGy_II_16\FGy_II_16.vcxproj", "{A3DBC13B-F0B3-4059-A498-E5C869F0CC8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -146,6 +148,14 @@ Global
 		{CC55E353-6AA2-420F-B233-E950A35BAB01}.Release|x64.Build.0 = Release|x64
 		{CC55E353-6AA2-420F-B233-E950A35BAB01}.Release|x86.ActiveCfg = Release|Win32
 		{CC55E353-6AA2-420F-B233-E950A35BAB01}.Release|x86.Build.0 = Release|Win32
+		{A3DBC13B-F0B3-4059-A498-E5C869F0CC8C}.Debug|x64.ActiveCfg = Debug|x64
+		{A3DBC13B-F0B3-4059-A498-E5C869F0CC8C}.Debug|x64.Build.0 = Debug|x64
+		{A3DBC13B-F0B3-4059-A498-E5C869F0CC8C}.Debug|x86.ActiveCfg = Debug|Win32
+		{A3DBC13B-F0B3-4059-A498-E5C869F0CC8C}.Debug|x86.Build.0 = Debug|Win32
+		{A3DBC13B-F0B3-4059-A498-E5C869F0CC8C}.Release|x64.ActiveCfg = Release|x64
+		{A3DBC13B-F0B3-4059-A498-E5C869F0CC8C}.Release|x64.Build.0 = Release|x64
+		{A3DBC13B-F0B3-4059-A498-E5C869F0CC8C}.Release|x86.ActiveCfg = Release|Win32
+		{A3DBC13B-F0B3-4059-A498-E5C869F0CC8C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
