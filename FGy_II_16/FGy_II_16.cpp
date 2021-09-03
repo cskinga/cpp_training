@@ -8,12 +8,24 @@ using namespace std;
 
 string torol(string szoveg)
 {
-
+    string torlendo;
+    getline(cin, torlendo);
+    for (int i = 0; i <= szoveg.size(); i++)
+    {
+        if (szoveg[i] == 'a' && szoveg[i + 1] == 'l' && szoveg[i + 2] == 'm' && szoveg[i + 3] == 'a')
+        {
+            szoveg.erase(i, 4);
+        }
+    }
+    return szoveg;
 }
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //std::cout << "Hello World!\n";
+    string szoveg;
+    getline(cin, szoveg);
+    cout << torol(szoveg);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
