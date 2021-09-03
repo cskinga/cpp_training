@@ -8,13 +8,14 @@ using namespace std;
 
 int tomb_feltoltese(int a)
 {
-    for (int i = 0; i < 99; i++)
+    for (int i; i < 99; i++)
     {
         srand(time(NULL));
         a = rand() % 51;
         cout << a << " ";
     }
     return a;
+
 }
 
 int main()

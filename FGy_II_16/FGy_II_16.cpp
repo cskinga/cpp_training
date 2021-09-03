@@ -6,6 +6,11 @@
 
 using namespace std;
 
+string torol(string szoveg)
+{
+
+}
+
 int main()
 {
     std::cout << "Hello World!\n";

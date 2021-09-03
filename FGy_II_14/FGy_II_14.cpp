@@ -8,19 +8,18 @@ using namespace std;
 
 string bekert_szoveg(string szoveg)
 {
-    string seged = szoveg;
-    for (int i = 0; i <= seged.size(); i++)
+    string seged;
+    getline(cin, seged);
+    for (int i = 0; i <= szoveg.size(); i++)
     {
-        if (seged[i] == 'a' && seged[i - 1] == 'm' && seged[i + 2] == 'l' && seged[i + 3] == 'a')
+        if (szoveg[i] == 'a' && szoveg[i + 1] == 'l' && szoveg[i + 2] == 'm' && szoveg[i + 3] == 'a')
         {
-            seged[i] == 'k';
-            seged[i + 1] == 'o';
-            seged[i + 2] == 'r';
-            seged[i + 3] == 't';
-            seged[i + 4] == 'e';
+            szoveg.erase(i, 4);
+            szoveg.append(seged, 0, seged.size() - 1);
+   
         }
     }
-    return seged;
+    return szoveg;
 }
 
 int main()
