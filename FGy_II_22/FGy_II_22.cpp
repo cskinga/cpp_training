@@ -24,6 +24,7 @@ int main()
 {
     //std::cout << "Hello World!\n";
     azonos_karakter_keresese("abcdefghijklmnoprstuv", "bdfhjlnpsu");
+    cout << "\n";
     azonos_karakter_keresese("bbddffhhjjllnnppssuu", "bdfhjlnpsu");
 }
 
