@@ -1,22 +1,30 @@
 // FGy_II_14.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
+/*a fuggveny harom szovebol alljon mibol, mit, mire.
+az FGy. I. 21. fuggvenyet atalakitani ugy, hogy a kezdoerteket adja vissza*/
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-string bekert_szoveg(string szoveg)
+string bekert_szoveg(string szoveg, string mit, string mire)
 {
-    string seged;
-    getline(cin, seged);
+    bool benne = -1;
     for (int i = 0; i <= szoveg.size(); i++)
     {
-        if (szoveg[i] == 'a' && szoveg[i + 1] == 'l' && szoveg[i + 2] == 'm' && szoveg[i + 3] == 'a')
+        for (int j = 0; j < mit.length(); j++)
         {
-            szoveg.erase(i, 4);
-            szoveg.append(seged, 0, seged.size() - 1);
-   
+            if (mit[j] == szoveg[i])
+            {
+                i++;
+                if (j == (mit.length() - 1))
+                {
+                    benne = szoveg.substr(0, i) + mire + szoveg.substr(i, szoveg.length());
+                }
+
+            }
+            else
+                break;
         }
     }
     return szoveg;
@@ -25,9 +33,8 @@ string bekert_szoveg(string szoveg)
 int main()
 {
     //std::cout << "Hello World!\n";
-    string szoveg;
-    getline(cin, szoveg);
-    cout << bekert_szoveg(szoveg);
+
+    cout << bekert_szoveg("az almafan alma van.", "alma", "szilva");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

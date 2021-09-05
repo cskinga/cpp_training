@@ -1,23 +1,23 @@
-// FGy_II_12.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_II_19.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include <string>
 
 using namespace std;
 
-string bekert_szam(string ertek)
+void paros_szamu_szamsor(int szamsor[10])
 {
-    /*stringbol -> szam, ha nem akkor irjon hibauzenetet
-    ha szam akkor 3*-osat irja ki.
-    b) negativ szamokat is felismerje,
-    c) tortszamokat -"-
-    d) hatvanykitevos alakok -"- */
+    szamsor[] = { 2, 4, 8, 6, 18, 14, 22, 12, 16, 24 };
+    for (int i = 0; i < sizeof(szamsor); i++)
+    {
+        szamsor[i] = szamsor[i] / 2;
+        cout << szamsor << " ";
+    }
 }
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //std::cout << "Hello World!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

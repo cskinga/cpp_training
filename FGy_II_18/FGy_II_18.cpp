@@ -1,4 +1,4 @@
-// FGy_II_12.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_II_18.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -6,18 +6,27 @@
 
 using namespace std;
 
-string bekert_szam(string ertek)
+string nagy_es_kisbetuk_csereje(string szoveg)
 {
-    /*stringbol -> szam, ha nem akkor irjon hibauzenetet
-    ha szam akkor 3*-osat irja ki.
-    b) negativ szamokat is felismerje,
-    c) tortszamokat -"-
-    d) hatvanykitevos alakok -"- */
+    for (int i = 0; i < szoveg.length(); i++)
+    {
+        if (szoveg[i] >= 'a' && szoveg[i] <= 'z')
+        {
+            szoveg[i] = szoveg[i] + 'A' - 'a';
+        }
+        else if (szoveg[i] >= 'A' && szoveg[i] <= 'Z')
+        {
+            szoveg[i] = szoveg[i] - 'A' + 'a';
+        }
+    }
+    return szoveg;
 }
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //std::cout << "Hello World!\n";
+    cout << nagy_es_kisbetuk_csereje("MeG CsErElOdTeK A KiS Es nAgY BeTuK.") << "\n";
+    cout << nagy_es_kisbetuk_csereje("EZ A MONDAT CSAK KISBETUBOL ALL.\nez pedig csak nagybetubol.");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

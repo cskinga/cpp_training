@@ -1,4 +1,4 @@
-// FGy_II_12.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_II_17.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -6,18 +6,30 @@
 
 using namespace std;
 
-string bekert_szam(string ertek)
+string zarojelpar_kereses(string szoveg)
 {
-    /*stringbol -> szam, ha nem akkor irjon hibauzenetet
-    ha szam akkor 3*-osat irja ki.
-    b) negativ szamokat is felismerje,
-    c) tortszamokat -"-
-    d) hatvanykitevos alakok -"- */
+    for (int i = 0; i < szoveg.length(); i++)
+    {
+        if (szoveg[i] == '(')
+        {
+            for (int j = i; j < szoveg.length(); j++)
+            {
+                if (szoveg[j] == ')')
+                {
+                    szoveg = szoveg.substr(i + 1, j - i - 1);
+                    cout << szoveg;
+                }
+            }
+        }
+    }
+    return szoveg;
 }
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //std::cout << "Hello World!\n";
+    zarojelpar_kereses("ebben a szovegben a zarojel kozott (ez) szerepel.");
+    zarojelpar_kereses("ebben a szovegben a zarojel kozott )(ez) szerepel.");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

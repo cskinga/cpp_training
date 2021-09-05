@@ -6,15 +6,22 @@
 
 using namespace std;
 
-string torol(string szoveg)
+string torol(string szoveg, string mit)
 {
-    string torlendo;
-    getline(cin, torlendo);
     for (int i = 0; i <= szoveg.size(); i++)
     {
-        if (szoveg[i] == 'a' && szoveg[i + 1] == 'l' && szoveg[i + 2] == 'm' && szoveg[i + 3] == 'a')
+        for (int j = 0; j < mit.length(); j++)
         {
-            szoveg.erase(i, 4);
+            if (szoveg[i] == mit[j])
+            {
+                i++;
+                if (j == (mit.length() - 1))
+                {
+                     szoveg.erase(i, mit.length());
+                }
+            }
+            else
+                break;
         }
     }
     return szoveg;
@@ -22,10 +29,8 @@ string torol(string szoveg)
 
 int main()
 {
-    //std::cout << "Hello World!\n";
-    string szoveg;
-    getline(cin, szoveg);
-    cout << torol(szoveg);
+    //std::cout << "Hello World!\n";a
+    cout << torol("az almafan alma van.","alma");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

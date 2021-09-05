@@ -8,20 +8,29 @@ using namespace std;
 
 int tomb_feltoltese(int a)
 {
-    for (int i; i < 99; i++)
+    srand(time(NULL));
+    for (int i = 0; i < 99; i++)
     {
-        srand(time(NULL));
         a = rand() % 51;
         cout << a << " ";
     }
     return a;
-
 }
 
 int main()
 {
     //std::cout << "Hello World!\n";
-    tomb_feltoltese(1);
+    int tomb[100];
+    int a;
+    srand(time(NULL));
+    for (int i = 0; i < 99; i++)
+    {
+        a = rand() % 51;
+        tomb[i] = {a};
+        printf("%d ", tomb);
+    }
+
+    
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

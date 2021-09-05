@@ -1,4 +1,4 @@
-// FGy_II_12.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_II_22.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -6,18 +6,25 @@
 
 using namespace std;
 
-string bekert_szam(string ertek)
+void azonos_karakter_keresese(string elso, string masodik)
 {
-    /*stringbol -> szam, ha nem akkor irjon hibauzenetet
-    ha szam akkor 3*-osat irja ki.
-    b) negativ szamokat is felismerje,
-    c) tortszamokat -"-
-    d) hatvanykitevos alakok -"- */
+    for (int i = 0; i < elso.length(); i++)
+    {
+        for (int j = 0; j < masodik.length(); j++)
+        {
+            if (elso[i] == masodik[j])
+            {
+                cout << elso[i] << "-> elso: " << i << "\t" << " masodik: " << j << "\n";
+            }
+        }
+    }
 }
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //std::cout << "Hello World!\n";
+    azonos_karakter_keresese("abcdefghijklmnoprstuv", "bdfhjlnpsu");
+    azonos_karakter_keresese("bbddffhhjjllnnppssuu", "bdfhjlnpsu");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
