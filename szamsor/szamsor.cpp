@@ -5,29 +5,39 @@
 #include <ctime>
 
 using namespace std;
+int i;
+int szamsor[100];
+int seged[100];
 
-int tomb_feltoltese(int a)
+void ismetlodes()
 {
-    srand(time(NULL));
-    for (int i = 0; i < 99; i++)
-    {
-        a = rand() % 51;
-        cout << a << " ";
-    }
-    return a;
+
 }
 
 int main()
 {
     //std::cout << "Hello World!\n";
-    int tomb[100];
-    int a;
     srand(time(NULL));
-    for (int i = 0; i < 99; i++)
+    for (int j = 0; j < 100; j++)
     {
-        a = rand() % 51;
-        tomb[i] = {a};
-        printf("%d ", tomb);
+        i = rand() % 51;
+        szamsor[j] = i;
+        seged[j] = i;
+    }
+    for (int m = 0; m < 100; m++)
+    {
+        cout << szamsor[m] << " ";
+    }
+    cout << "\n\n";
+    for (int k = 0; k < 100; k++)
+    {
+        for (int l = 0; l < 100; l++)
+        {
+            if (szamsor[l] == seged[k])
+            {
+
+            }
+        }
     }
 
     

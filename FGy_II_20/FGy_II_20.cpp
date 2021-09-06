@@ -1,4 +1,4 @@
-// FGy_II_19.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_II_20.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -7,7 +7,7 @@
 using namespace std;
 int i;
 int szamsor[20];
-int szamsor2[20];
+int seged[20];
 
 int main()
 {
@@ -15,10 +15,11 @@ int main()
     srand(time(NULL));
     for (int j = 0; j < 20; j++)
     {
-        i = rand() % 90;
+        i = rand() % 50;
         if (i % 2 == 0)
         {
             szamsor[j] = i;
+            seged[j] = szamsor[j];
         }
     }
     for (int o = 0; o < 20; o++)
@@ -26,33 +27,13 @@ int main()
         cout << szamsor[o] << " ";
     }
     cout << "\n";
-    for (int m = 0; m < 20; m++)
+    for (int n = 0; n < 20; n++)
     {
-        szamsor[m] = szamsor[m] / 2;
-        cout << szamsor[m] << " ";
+        seged[n] = szamsor[19 - n];
+        cout << seged[n] << " ";
     }
-    cout << "\n";
-    cout << "\n";
-    // b resz
-    for (int j = 0; j < 20; j++)
-    {
-        i = rand() % 80;
-        szamsor2[j] = i;
-    }
-    for (int o = 0; o < 20; o++)
-    {
-        cout << szamsor[o] << " ";
-    }
-    cout << "\n";
-    for (int p = 0; p < 20; p++)
-    {
-        if (szamsor2[p] % 2 == 0)
-        {
-            szamsor2[p] = szamsor2[p] / 2;
-        }
-        cout << szamsor2[p] << " ";
-    }
-    cout << "\n";
+    
+    
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
