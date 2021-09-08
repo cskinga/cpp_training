@@ -40,7 +40,7 @@ int main()
         seged[n] = szamsor[19 - n];
         cout << seged[n] << " ";
     }
-    cout << "\n\n";
+    cout << "\n";
     cout << reverse(".nav avtidrof gevozs  a zE");
     
 }
