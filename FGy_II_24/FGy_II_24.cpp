@@ -13,7 +13,7 @@ string sorszamozas(string szoveg)
         if (szoveg[i] == '\n')
         {
             int j = i + 1;
-            szoveg = szoveg.substr(0, i + 1) + "." + szoveg.substr(i + 2, szoveg.length());
+            szoveg = szoveg.substr(0, i + 1) +  + "." + szoveg.substr(i + 2, szoveg.length());
         }
     }
     return szoveg;
