@@ -8,23 +8,25 @@ using namespace std;
 
 string torol(string szoveg, string mit)
 {
-    for (int i = 0; i <= szoveg.size(); i++)
+    string seged = szoveg;
+    for (int i = 0; i <= seged.size(); i++)
     {
         for (int j = 0; j < mit.length(); j++)
         {
-            if (szoveg[i] == mit[j])
+            if (seged[i] == mit[j])
             {
                 i++;
                 if (j == (mit.length() - 1))
                 {
-                     szoveg.erase(i, mit.length());
+                    seged.erase(i - j - 1, mit.length());
+                    i--;
                 }
             }
             else
                 break;
         }
     }
-    return szoveg;
+    return seged;
 }
 
 int main()

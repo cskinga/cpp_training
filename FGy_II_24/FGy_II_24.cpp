@@ -1,29 +1,28 @@
-// FGy_II_22.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_II_24.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 #include <string>
-#include <cmath>
 
 using namespace std;
 
-void azonos_karakter_keresese(string elso, string masodik)
+string sorszamozas(string szoveg)
 {
-    for (int i = 0; i < min(elso.length(), masodik.length()); i++)
+    for (int i = 0; i < szoveg.length(); i++)
     {
-        if (elso[i] == masodik[i])
+        if (szoveg[i] == '\n')
         {
-            cout << i << " ";
+            int j = i + 1;
+            szoveg = szoveg.substr(0, i + 1) + "." + szoveg.substr(i + 2, szoveg.length());
         }
     }
+    return szoveg;
 }
 
 int main()
 {
-    //std::cout << "Hello World!\n";
-    azonos_karakter_keresese("az almafan alma van.", "a kortefan korte van.");
-    cout << "\n";
-    azonos_karakter_keresese("almalma", "alma van.");
+    std::cout << "Hello World!\n";
+    cout << sorszamozas("az\neejgwkyu\nyefugkyu");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

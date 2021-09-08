@@ -6,7 +6,7 @@
 
 using namespace std;
 
-string bekert_szam(string ertek)
+void bekert_szam(string ertek)
 {
     /*stringbol -> szam, ha nem akkor irjon hibauzenetet
     ha szam akkor 3*-osat irja ki.

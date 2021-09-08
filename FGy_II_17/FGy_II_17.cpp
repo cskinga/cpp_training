@@ -17,7 +17,7 @@ string zarojelpar_kereses(string szoveg)
                 if (szoveg[j] == ')')
                 {
                     szoveg = szoveg.substr(i + 1, j - i - 1);
-                    cout << szoveg;
+                    cout << szoveg << "\n";
                 }
             }
         }
