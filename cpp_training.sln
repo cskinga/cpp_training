@@ -46,6 +46,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FGy_II_22", "FGy_II_22\FGy_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FGy_II_20", "FGy_II_20\FGy_II_20.vcxproj", "{0A06DCD4-9BAE-485E-9E3F-AD311685A3B3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "feladatgy_II_11", "feladatgy_II_11\feladatgy_II_11.vcxproj", "{50053CC1-BDB7-47D9-BC1E-ADFF35089C4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -206,6 +208,14 @@ Global
 		{0A06DCD4-9BAE-485E-9E3F-AD311685A3B3}.Release|x64.Build.0 = Release|x64
 		{0A06DCD4-9BAE-485E-9E3F-AD311685A3B3}.Release|x86.ActiveCfg = Release|Win32
 		{0A06DCD4-9BAE-485E-9E3F-AD311685A3B3}.Release|x86.Build.0 = Release|Win32
+		{50053CC1-BDB7-47D9-BC1E-ADFF35089C4E}.Debug|x64.ActiveCfg = Debug|x64
+		{50053CC1-BDB7-47D9-BC1E-ADFF35089C4E}.Debug|x64.Build.0 = Debug|x64
+		{50053CC1-BDB7-47D9-BC1E-ADFF35089C4E}.Debug|x86.ActiveCfg = Debug|Win32
+		{50053CC1-BDB7-47D9-BC1E-ADFF35089C4E}.Debug|x86.Build.0 = Debug|Win32
+		{50053CC1-BDB7-47D9-BC1E-ADFF35089C4E}.Release|x64.ActiveCfg = Release|x64
+		{50053CC1-BDB7-47D9-BC1E-ADFF35089C4E}.Release|x64.Build.0 = Release|x64
+		{50053CC1-BDB7-47D9-BC1E-ADFF35089C4E}.Release|x86.ActiveCfg = Release|Win32
+		{50053CC1-BDB7-47D9-BC1E-ADFF35089C4E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
