@@ -31,11 +31,12 @@ int main()
     cout << "\n\n";
     for (int k = 0; k < 100; k++)
     {
-        for (int l = 0; l < 100; l++)
+        for (int l = k + 1; l < 100; l++)
         {
             if (szamsor[l] == seged[k])
             {
-
+                cout << szamsor[l] << " ";
+                break;
             }
         }
     }

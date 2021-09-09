@@ -9,6 +9,17 @@ int i;
 int szamsor[20];
 int seged[20];
 
+string reverse(string vissza)
+{
+    string seged = vissza;
+    for (int i = 0; i < seged.size(); i++)
+    {
+        seged[i] = vissza[vissza.size() - i - 1];
+    }
+    return seged;
+}
+
+
 int main()
 {
     //std::cout << "Hello World!\n";
@@ -16,11 +27,8 @@ int main()
     for (int j = 0; j < 20; j++)
     {
         i = rand() % 50;
-        if (i % 2 == 0)
-        {
-            szamsor[j] = i;
-            seged[j] = szamsor[j];
-        }
+        szamsor[j] = i;
+        seged[j] = szamsor[j];
     }
     for (int o = 0; o < 20; o++)
     {
@@ -32,7 +40,8 @@ int main()
         seged[n] = szamsor[19 - n];
         cout << seged[n] << " ";
     }
-    
+    cout << "\n";
+    cout << reverse(".nav avtidrof gevozs  a zE");
     
 }
 

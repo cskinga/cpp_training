@@ -1,29 +1,20 @@
-// FGy_II_22.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_II_23.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 #include <string>
-#include <cmath>
 
 using namespace std;
 
-void azonos_karakter_keresese(string elso, string masodik)
+void karakter_permutacio(string karakterlanc)
 {
-    for (int i = 0; i < min(elso.length(), masodik.length()); i++)
-    {
-        if (elso[i] == masodik[i])
-        {
-            cout << i << " ";
-        }
-    }
+
 }
 
 int main()
 {
-    //std::cout << "Hello World!\n";
-    azonos_karakter_keresese("az almafan alma van.", "a kortefan korte van.");
-    cout << "\n";
-    azonos_karakter_keresese("almalma", "alma van.");
+    std::cout << "Hello World!\n";
+    karakter_permutacio("abc");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -20,6 +20,8 @@ int main()
         {
             szamsor[j] = i;
         }
+        else
+            j--;
     }
     for (int o = 0; o < 20; o++)
     {

@@ -9,17 +9,19 @@ using namespace std;
 
 string bekert_szoveg(string szoveg, string mit, string mire)
 {
-    bool benne = -1;
-    for (int i = 0; i <= szoveg.size(); i++)
+    string seged = szoveg;
+    bool benne = false;
+    for (int i = 0; i <= seged.size(); i++)
     {
         for (int j = 0; j < mit.length(); j++)
         {
-            if (mit[j] == szoveg[i])
+            if (mit[j] == seged[i])
             {
                 i++;
                 if (j == (mit.length() - 1))
                 {
-                    benne = szoveg.substr(0, i) + mire + szoveg.substr(i, szoveg.length());
+                    benne = true;
+                    seged =  seged.substr(0, i - j - 1) + mire + seged.substr(i, seged.length());
                 }
 
             }
@@ -27,7 +29,7 @@ string bekert_szoveg(string szoveg, string mit, string mire)
                 break;
         }
     }
-    return szoveg;
+    return seged;
 }
 
 int main()
