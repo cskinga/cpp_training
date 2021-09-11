@@ -6,15 +6,43 @@
 
 using namespace std;
 
-void karakter_permutacio(string karakterlanc)
+int faktorialis(int szam) 
 {
+    int seged1, seged2;
+    seged2 = 1;
+    for (int i = 1; i <= szam; i++)
+    {
+        seged1 = i * seged2;
+        seged2 = seged1;
+    }
+    return seged1;
+}
 
+string karakter_permutacio(string karakterlanc)
+{
+    string seged = karakterlanc;
+    for (int i = 0; i <= (faktorialis(karakterlanc.length() - 1)); i++)
+    {
+        for (int j = karakterlanc.length() - 1; j > 0; j--)
+        {
+            karakterlanc[j] = seged[j - 1];
+            karakterlanc[j - 1] = seged[j];
+            seged = karakterlanc;
+            cout << karakterlanc << "\n";
+        }
+    }
+    return karakterlanc;
 }
 
 int main()
 {
     std::cout << "Hello World!\n";
+    karakter_permutacio("ab");
+    cout << "\n";
     karakter_permutacio("abc");
+    cout << "\n";
+    karakter_permutacio("abcd");
+    cout << "\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

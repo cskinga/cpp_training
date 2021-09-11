@@ -1,35 +1,18 @@
-// FGy_II_19.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_II_30.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include <ctime>
 
 using namespace std;
-int i;
-int szamsor[20];
-double szamsor2[20];
+
+int szamok_sorrendbe_allitasa(int valami)
+{
+
+}
 
 int main()
 {
-    //std::cout << "Hello World!\n";
-    srand(time(NULL));
-    for (int j = 0; j < 20; j++)
-    {
-        i = rand() % 80;
-        szamsor2[j] = i;
-    }
-    for (int o = 0; o < 20; o++)
-    {
-        cout << szamsor2[o] << " ";
-    }
-    cout << "\n";
-    for (int p = 0; p < 20; p++)
-    {
-
-        szamsor2[p] = szamsor2[p] / 2;
-        cout << szamsor2[p] << " ";
-    }
-    cout << "\n";
+    std::cout << "Hello World!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
