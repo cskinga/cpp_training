@@ -4,20 +4,41 @@
 #include <iostream>
 #include <string>
 
+/*stringbol -> szam, ha nem akkor irjon hibauzenetet
+ha szam akkor 3*-osat irja ki.
+b) negativ szamokat is felismerje,
+c) tortszamokat -"-
+d) hatvanykitevos alakok -"- */
+
 using namespace std;
 
 void bekert_szam(string ertek)
 {
-    /*stringbol -> szam, ha nem akkor irjon hibauzenetet
-    ha szam akkor 3*-osat irja ki.
-    b) negativ szamokat is felismerje,
-    c) tortszamokat -"-
-    d) hatvanykitevos alakok -"- */
+    bool karakter = false;
+    for (int i = 0; i < ertek.size() && karakter != true; i++)
+    {
+        if (ertek[0] != '-' && ertek[i] != '.' && ertek[i] != 'e' && (ertek[i] < '0' || ertek[i] > '9'))
+        {
+            cout << "nem egy szam!!";
+            karakter = true;
+        }
+
+    }
+    if (karakter == false)
+    {
+        cout << 3 * stoi(ertek);
+    }
 }
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    bekert_szam("123");
+    cout << "\n";
+    bekert_szam("-123");
+    cout << "\n";
+    bekert_szam("123.23");
+    cout << "\n";
+    bekert_szam("123e2");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

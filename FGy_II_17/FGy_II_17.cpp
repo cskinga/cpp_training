@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+//szamlalo valtozo letrehozasa a nyitozarojelekhez es zarozarojelhez.
+
 using namespace std;
 
 string zarojelpar_kereses(string szoveg)

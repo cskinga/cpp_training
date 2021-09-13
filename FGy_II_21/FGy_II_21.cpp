@@ -1,30 +1,14 @@
-// FGy_II_24.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_II_21.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+
+/*adj meg egy szamsort, az osszes reszsorozatat irja ki.
+kell ket for ciklus*/
 #include <iostream>
-#include <string>
-
-using namespace std;
-
-string sorszamozas(string szoveg)
-{
-    int j = 1;
-    szoveg = to_string(j) + "." + szoveg;
-    for (int i = 0; i < szoveg.length(); i++)
-    {
-        if (szoveg[i] == '\n')
-        {
-            j += 1;
-            szoveg = szoveg.substr(0, i + 1) + to_string(j) + "." + szoveg.substr(i + 1, szoveg.length());
-        }
-    }
-    return szoveg;
-}
 
 int main()
 {
     std::cout << "Hello World!\n";
-    cout << sorszamozas("az\neejgwkyu\n\nyefugkyu");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
