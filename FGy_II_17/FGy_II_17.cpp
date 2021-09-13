@@ -11,20 +11,41 @@ using namespace std;
 string zarojelpar_kereses(string szoveg)
 {
     int szamlalo = 0;
+    int szamlalo2 = 0;
+    bool zarojel = false;
     for (int i = 0; i < szoveg.length(); i++)
     {
         if (szoveg[i] == '(')
         {
             szamlalo += 1;
-            for (int j = i; j < szoveg.length(); j++)
+            szamlalo2 = 1;
+            zarojel = true;
+            for (int j = i + 1; j < szoveg.length(); j++)
             {
-                if (szoveg[j] == ')')
+                if (szoveg[j] == '(')
                 {
-                    szoveg = szoveg.substr(i + 1, j - i - 1);
-                    cout << szoveg << "\n";
+                    szamlalo += 1;
+                    szamlalo2 += 1;
+                }
+                else if (szoveg[j] == ')')
+                {
+                    szamlalo -= 1;
+                    szamlalo2 -= 1;
+                    if (szamlalo2 == 0)
+                    {
+                        cout << szoveg.substr(i + 1, j - i - 1) << "\n";
+                    }
                 }
             }
         }
+    }
+    if(szamlalo != 0)
+    {
+        cout << "Hibas zarojelezes!!\n";
+    }
+    else if(zarojel == false)
+    {
+        cout << "Nem szerepel a szovegben zarojel.\n";
     }
     return szoveg;
 }
@@ -33,7 +54,12 @@ int main()
 {
     //std::cout << "Hello World!\n";
     zarojelpar_kereses("ebben a szovegben a zarojel kozott (ez) szerepel.");
-    zarojelpar_kereses("ebben a szovegben a zarojel kozott )(ez) szerepel.");
+    zarojelpar_kereses("ebben a szovegben a zarojel kozott ez szerepel.");
+    zarojelpar_kereses("ebben a szovegben a zarojel kozott )(ez szerepel.");
+    zarojelpar_kereses("ebben a szovegben a zarojel kozott (ez ))szerepel.");
+    zarojelpar_kereses("ebben a szovegben a zarojel kozott ((ez) szerepel.");
+    zarojelpar_kereses("ebben a szovegben a zarojel( kozott )(ez) szerepel.");
+    zarojelpar_kereses("ebben a szovegben a zarojel (kozott()( )(ez) s)zerepel.");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
