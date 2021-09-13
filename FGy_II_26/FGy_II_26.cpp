@@ -2,11 +2,13 @@
 //
 
 #include <iostream>
+#include <list>
 
 using namespace std;
 
 void primszamok(int prim)
 {
+    list<int> primek;
     for (int i = prim; i > 1; i--)
     {
         for (int j = 2; j < prim; j++)
@@ -15,13 +17,15 @@ void primszamok(int prim)
             {
                 i -= 1;
             }
-            else if (i != j && i % j != 0)
+            else if(i == j || i % j == 0)
             {
-
+                primek.push_front(i);
             }
-            else
-                cout << i << " ";
         }
+    }
+    for (list<int>::iterator it = primek.begin(); it != primek.end(); ++it)
+    {
+        cout << *it << " ";
     }
 }
 
