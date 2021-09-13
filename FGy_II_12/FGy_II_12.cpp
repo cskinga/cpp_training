@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 /*stringbol -> szam, ha nem akkor irjon hibauzenetet
 ha szam akkor 3*-osat irja ki.
@@ -15,6 +16,10 @@ using namespace std;
 void bekert_szam(string ertek)
 {
     bool karakter = false;
+    bool tizedes = false;
+    bool hatvanykitevo = false;
+    string seged;
+    string seged2;
     for (int i = 0; i < ertek.size() && karakter != true; i++)
     {
         if (ertek[0] != '-' && ertek[i] != '.' && ertek[i] != 'e' && (ertek[i] < '0' || ertek[i] > '9'))
@@ -22,11 +27,29 @@ void bekert_szam(string ertek)
             cout << "nem egy szam!!";
             karakter = true;
         }
-
+        else if (ertek[i] == '.')
+        {
+            tizedes = true;
+        }
+        else if (ertek[i] == 'e')
+        {
+            seged2 = ertek.substr(0, i);
+            seged = ertek.substr(i + 1, ertek.length());
+            hatvanykitevo = true;
+        }
     }
     if (karakter == false)
     {
-        cout << 3 * stoi(ertek);
+        if (hatvanykitevo == true)
+        {
+            cout << 3 * stof(seged2) * pow(10, stof(seged));
+        }
+        else if (tizedes == true)
+        {
+            cout << 3 * stof(ertek);
+        }
+        else
+            cout << 3 * stoi(ertek);
     }
 }
 
@@ -38,7 +61,7 @@ int main()
     cout << "\n";
     bekert_szam("123.23");
     cout << "\n";
-    bekert_szam("123e2");
+    bekert_szam("123.32e2.5");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

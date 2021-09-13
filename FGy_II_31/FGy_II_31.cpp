@@ -1,34 +1,51 @@
-// FGy_II_26.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_II_31.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 
 using namespace std;
 
-void primszamok(int prim)
+void atlos_negyzet(double sor)
 {
-    for (int i = prim; i > 1; i--)
+    for (int i = 0; i < sor; i++)
     {
-        for (int j = 2; j < prim; j++)
+        for (int j = 0; j < (sor / 2) - 1; j++)
         {
-            if (i != j && i % j == 0)
+            if (i % 2 == 0)
             {
-                i -= 1;
-            }
-            else if (i != j && i % j != 0)
-            {
-
+                cout << "*   ";
             }
             else
-                cout << i << " ";
+            {
+                printf("  *");
+            }
         }
+        cout << "\n";
     }
 }
 
 int main()
 {
     std::cout << "Hello World!\n";
-    primszamok(20);
+    int sakk = 8;
+    for (int i = 0; i < sakk; i++)
+    {
+        for (int j = 0; j < (sakk / 2); j++)
+        {
+            if (i % 2 == 0)
+            {
+                cout << "**  ";
+            }
+            else
+            {
+                printf("  **");
+            }
+        }
+        cout << "\n";
+    }
+    cout << "\n\n";
+
+    atlos_negyzet(9);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

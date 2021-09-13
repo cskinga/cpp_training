@@ -10,10 +10,12 @@ using namespace std;
 
 string zarojelpar_kereses(string szoveg)
 {
+    int szamlalo = 0;
     for (int i = 0; i < szoveg.length(); i++)
     {
         if (szoveg[i] == '(')
         {
+            szamlalo += 1;
             for (int j = i; j < szoveg.length(); j++)
             {
                 if (szoveg[j] == ')')
