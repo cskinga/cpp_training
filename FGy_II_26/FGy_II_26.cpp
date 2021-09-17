@@ -29,10 +29,25 @@ void primszamok(int prim)
     }
 }
 
+void primtenyezos_szorzat(int szam)
+{
+    for (int i = 2; i <= szam; i++)
+    {
+        if (szam % i == 0)
+        {
+            cout << i << " * ";
+            szam = szam / i;
+            i--;
+        }
+    }
+}
+
 int main()
 {
     std::cout << "Hello World!\n";
     primszamok(20);
+    cout << "\n";
+    primtenyezos_szorzat(100);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
