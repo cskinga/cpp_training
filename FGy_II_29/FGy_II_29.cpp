@@ -1,36 +1,26 @@
-// FGy_II_21.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_II_29.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-
-/*adj meg egy szamsort, az osszes reszsorozatat irja ki.
-kell ket for ciklus*/
 #include <iostream>
-#include <cstdlib>
 
 using namespace std;
 
-void reszsorozatok(int n)
+void negyzetgyo_kozelites(int x, int n)
 {
-    int tomb[10] = {2, 3, 5, 7, 8, 12, 15, 17, 10, 4};
-    for (int i = 0; i < n - 2; i++)
+    double a0 = 1;
+    double an = 0;
+    for (int i = 1; i <= n; i++)
     {
-        int d = tomb[i] - tomb[i + 1];
-        cout << tomb[i] << " ";
-        for (int j = i + 1; i < n - 1; j++)
-        {
-            if (abs(tomb[j] - tomb[i]) % abs(d))
-            {
-                cout << tomb[j] << " ";
-            }
-        }
-        cout << "\n";
+        an = (1 / 2) * (a0 + (x / a0));
+        a0 = an;
     }
+    cout << an;
 }
 
 int main()
 {
     std::cout << "Hello World!\n";
-    reszsorozatok(10);
+    negyzetgyo_kozelites(4, 10);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
