@@ -9,7 +9,7 @@ void atlos_negyzet(double sor)
 {
     for (int i = 0; i < sor; i++)
     {
-        for (int j = 0; j < (sor / 2) - 1; j++)
+        for (int j = 0; j < (sor / 2); j++)
         {
             if (i % 2 == 0)
             {
@@ -17,7 +17,14 @@ void atlos_negyzet(double sor)
             }
             else
             {
-                printf("  *");
+                if (j == 0)
+                {
+                    cout << "  *";
+                }
+                else if (j < ((sor / 2) - 1))
+                {
+                    cout << "   *";
+                }
             }
         }
         cout << "\n";
@@ -45,7 +52,13 @@ int main()
     }
     cout << "\n\n";
 
-    atlos_negyzet(9);
+    atlos_negyzet(5);
+    cout << "\n";
+    atlos_negyzet(6);
+    cout << "\n";
+    atlos_negyzet(7);
+    cout << "\n";
+    atlos_negyzet(8);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
