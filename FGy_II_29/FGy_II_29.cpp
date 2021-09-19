@@ -5,22 +5,34 @@
 
 using namespace std;
 
-void negyzetgyo_kozelites(int x, int n)
+float negyzetgyok_kozelites(int x, int n)
 {
-    double a0 = 1;
-    double an = 0;
+    float a0 = 1;
+    float an;
     for (int i = 1; i <= n; i++)
     {
-        an = (1 / 2) * (a0 + (x / a0));
+        an = 0.5 * (a0 + (x / a0));
         a0 = an;
     }
-    cout << an;
+    return a0;
 }
 
 int main()
 {
     std::cout << "Hello World!\n";
-    negyzetgyo_kozelites(4, 10);
+    cout << negyzetgyok_kozelites(4, 1);
+    cout << "\n";
+    cout << negyzetgyok_kozelites(4, 2);
+    cout << "\n";
+    cout << negyzetgyok_kozelites(4, 3);
+    cout << "\n";
+    cout << negyzetgyok_kozelites(4, 4);
+    cout << "\n";
+    cout << negyzetgyok_kozelites(36, 6);
+    cout << "\n";
+    cout << negyzetgyok_kozelites(100, 10);
+    cout << "\n";
+    cout << negyzetgyok_kozelites(2, 3);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
