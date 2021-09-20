@@ -21,7 +21,7 @@ void atlos_negyzet(double sor)
                 {
                     cout << "  *";
                 }
-                else if (j < ((sor / 2) - 1))
+                else if (j <= ((sor / 2) - 1))
                 {
                     cout << "   *";
                 }
