@@ -61,7 +61,7 @@ string dtohx(int szam)
         maradek = szam % 16;
         if (maradek > 9)
         {
-            seged = 'A' + (maradek - 10);
+            seged = 'A' - (maradek - 10);
             z = seged + z;
         }
         else
@@ -77,7 +77,7 @@ int main()
 {
     std::cout << "Hello!\n";
     cout << decimal_to_hexadecimal(9);
-    cout << dtohx(255);
+    cout << dtohx(10);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
