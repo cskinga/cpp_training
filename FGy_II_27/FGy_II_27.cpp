@@ -51,14 +51,14 @@ string decimal_to_hexadecimal(int x)
     return z;
 }
 
-string dtohx(int szam)
+string dtohx(int szam, int szamrdsz)
 {
     string z = "";
     char seged;
     int maradek;
     while (szam > 0)
     {
-        maradek = szam % 16;
+        maradek = szam % szamrdsz;
         if (maradek > 9)
         {
             seged = 'A' + (maradek - 10);
@@ -66,18 +66,17 @@ string dtohx(int szam)
         }
         else
         {
-            z = "" + maradek + z;
+            z = to_string(maradek) + z;
         }
-        szam = (szam - maradek) / 16;
+        szam = (szam - maradek) / szamrdsz;
     }
     return z;
 }
 
 int main()
 {
-    std::cout << "Hello!\n";
     cout << decimal_to_hexadecimal(9);
-    cout << dtohx(255);
+    cout << dtohx(255, 8);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

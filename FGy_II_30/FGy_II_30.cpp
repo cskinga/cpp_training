@@ -3,16 +3,26 @@
 
 #include <iostream>
 
+
 using namespace std;
-
-int szamok_sorrendbe_allitasa(int valami)
-{
-
-}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //std::cout << "Hello World!\n";
+    int szamsorozat[] = {1, 3, 2, 9, 0, 8, 4, 5, 7, 6};
+    int seged;
+    cout << szamsorozat[9] << "\n";
+    for (int i = 0; i < sizeof(szamsorozat) - 1; ++i)
+    {
+        seged = szamsorozat[i + 1];
+        if (szamsorozat[i] > szamsorozat[i + 1])
+        {
+            szamsorozat[i + 1] = szamsorozat[i];
+            szamsorozat[i] = seged;
+        }
+        cout << szamsorozat[i] << " ";
+    }
+    
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
