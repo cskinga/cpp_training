@@ -5,9 +5,33 @@
 
 using namespace std;
 
+int valodi_osztok_szama(int szam)
+{
+    int seged = 0;
+    for (int i = 2; i < szam; i++)
+    {
+        if (szam % i == 0)
+        {
+            seged += 1;
+        }
+    }
+    return seged;
+}
+
+void legtobb_valodi_oszto(int a, int b)
+{
+    int osztok_szama = 0;
+    for (int i = a; i <= b; i++)
+    {
+        osztok_szama = valodi_osztok_szama(i);
+        cout << osztok_szama << "\n";
+    }
+}
+
 int main()
 {
     std::cout << "Hello World!\n";
+    legtobb_valodi_oszto(3, 10);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

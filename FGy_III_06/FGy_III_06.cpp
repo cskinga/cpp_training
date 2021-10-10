@@ -8,19 +8,19 @@ using namespace std;
 int elso_n_tokeletesszam(int n)
 {
     int szam = 3;
-    int oszto = 2;
     int seged = 0;
     for (int i = 0; i < n; i++)
     {
-        for (oszto; oszto < szam; oszto++)
+        for (int oszto = 1; oszto < szam; oszto++)
         {
-            seged += oszto;
-
+            if (szam % oszto == 0)
+            {
+                seged += oszto;
+            }
         }
         if (seged != szam)
         {
             seged = 0;
-            oszto = 2;
             i--;
         }
         else
@@ -28,7 +28,6 @@ int elso_n_tokeletesszam(int n)
             cout << seged << " ";
         }
         seged = 0;
-        oszto = 2;
         szam += 1;
     }
     return seged;
@@ -37,7 +36,7 @@ int elso_n_tokeletesszam(int n)
 int main()
 {
     std::cout << "Hello World!\n";
-    elso_n_tokeletesszam(5);
+    elso_n_tokeletesszam(4);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

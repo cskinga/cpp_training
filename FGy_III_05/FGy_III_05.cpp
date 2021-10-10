@@ -15,6 +15,7 @@ int legnagyobb_kozos_oszto(int szam1, int szam2)
         {
             seged = i;
         }
+        i++;
     }
     return seged;
 }
