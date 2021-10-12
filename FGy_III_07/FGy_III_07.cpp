@@ -18,20 +18,27 @@ int valodi_osztok_szama(int szam)
     return seged;
 }
 
-void legtobb_valodi_oszto(int a, int b)
+int legtobb_valodi_oszto(int a, int b)
 {
     int osztok_szama = 0;
+    int max = 0;
+    int szam = 0;
     for (int i = a; i <= b; i++)
     {
         osztok_szama = valodi_osztok_szama(i);
-        cout << osztok_szama << "\n";
+        if (max < osztok_szama)
+        {
+            max = osztok_szama;
+            szam = i;
+        }
     }
+    return szam;
 }
 
 int main()
 {
     std::cout << "Hello World!\n";
-    legtobb_valodi_oszto(3, 10);
+    cout << legtobb_valodi_oszto(3, 10);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

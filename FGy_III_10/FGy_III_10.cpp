@@ -1,28 +1,22 @@
-// FGy_III_09.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_III_10.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include <string>
 #include <list>
+#include <string>
 
 using namespace std;
 
-double atlagszamitas(double a, double b, double c)
-{
-    double atlag = (a + b + c)/3;
-    cout << atlag << "\n";
-    return atlag;
-}
-
-double n_db_szam_atlaga()
+double osszes_atlag_alatti_szam()
 {
     string szam;
     list<int> szamsor;
     double osszeg = 0;
     double atlag = 0;
-    do 
+    double szamlalo = 0;
+    do
     {
-        getline(cin, szam);             //csak egész szám bemenetekre mukodik.
+        getline(cin, szam);
         if (szam != "")
         {
             szamsor.push_back(stoi(szam));
@@ -34,18 +28,20 @@ double n_db_szam_atlaga()
         osszeg += *it;
     }
     atlag = osszeg / szamsor.size();
-    return atlag;
+    for (list<int>::iterator it = szamsor.begin(); it != szamsor.end(); it++)
+    {
+        if (*it < atlag)
+        {
+            szamlalo += 1;
+        }
+    }
+    return szamlalo;
 }
 
 int main()
 {
     std::cout << "Hello World!\n";
-    atlagszamitas(5, 7, 10);
-    atlagszamitas(-1, 10, 12);
-    atlagszamitas(6, 8, 10);
-    atlagszamitas(13, 17, 19);
-    cout << n_db_szam_atlaga();
-
+    cout << osszes_atlag_alatti_szam();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
