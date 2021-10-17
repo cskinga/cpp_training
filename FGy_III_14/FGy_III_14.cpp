@@ -6,33 +6,51 @@
 
 using namespace std;
 
-void vektortoltes(vector<int>&);
+void vektortoltes(vector<int>& vektor, int n);
 
-void vektorkiratas(const vector<int>&);
+void vektorkiiratas(const vector<int>& vektor);
 
 void vektortoltes(vector<int>& vektor, int n)
 {
     cout << "vektor: ";
     int szam;
     cin >> szam;
-    while (vektor.size() < n)
+    while (vektor.size() < n - 1)
     {
         vektor.push_back(szam);
         cin >> szam;
     }
-    cout << end1;
+    cout << endl;
 }
 
-double skalaris_szorzat()
+void vektorkiiratas(const vector<int>& vektor)
 {
-    return 0;
+    cout << "vektor: ";
+    for (unsigned int i = 0; i < vektor.size(); i++)
+    {
+        cout << vektor[i];
+    }
+    cout << endl;
+}
+
+double skalaris_szorzat(int n)
+{
+    vector<int> vektor1;
+    vector<int> vektor2;
+    double osszeg = 0;
+    vektortoltes(vektor1, n);
+    vektortoltes(vektor2, n);
+    for (int i = 0; i < n; i++)
+    {
+        osszeg += vektor1[i] * vektor2[i];
+    }
+    return osszeg;
 }
 
 int main()
 {
     std::cout << "Hello World!\n";
-    vector<int> vektor;
-    vektortoltes(vektor);
+    skalaris_szorzat(3);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
