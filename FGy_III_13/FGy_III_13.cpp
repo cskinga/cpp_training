@@ -8,6 +8,19 @@
 
 using namespace std;
 
+bool egesz_szam_e(string szam)
+{
+    bool egesz = true;
+    for (int i = 0; i < szam.size(); i++)
+    {
+        if (szam[i] < '0' || szam[i] > '9')
+        {
+            egesz = false;
+        }
+    }
+    return egesz;
+}
+
 double negyzetgyok_osszeg()
 {
     string szam;
@@ -17,7 +30,7 @@ double negyzetgyok_osszeg()
     do
     {
         getline(cin, szam);            
-        if (szam != "")
+        if (szam != "" && egesz_szam_e(szam) == true)
         {
             szamsor.push_back(stoi(szam));
         }
