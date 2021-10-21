@@ -6,19 +6,22 @@
 
 using namespace std;
 
-void vektortoltes(vector<int>& vektor, int n);
-
-void vektorkiiratas(const vector<int>& vektor);
+int dimenzio_bekeres()
+{
+    cout << "a vektorok dimenzioja: ";
+    int n;
+    cin >> n;
+    return n;
+}
 
 void vektortoltes(vector<int>& vektor, int n)
 {
     cout << "vektor: ";
     int szam;
-    cin >> szam;
-    while (vektor.size() < n - 1)
+    while (vektor.size() < n)
     {
-        vektor.push_back(szam);
         cin >> szam;
+        vektor.push_back(szam);
     }
     cout << endl;
 }
@@ -33,14 +36,15 @@ void vektorkiiratas(const vector<int>& vektor)
     cout << endl;
 }
 
-double skalaris_szorzat(int n)
+double skalaris_szorzat()
 {
     vector<int> vektor1;
     vector<int> vektor2;
     double osszeg = 0;
-    vektortoltes(vektor1, n);
-    vektortoltes(vektor2, n);
-    for (int i = 0; i < n; i++)
+    int d = dimenzio_bekeres();
+    vektortoltes(vektor1, d);
+    vektortoltes(vektor2, d);
+    for (int i = 0; i < vektor1.size(); i++)
     {
         osszeg += vektor1[i] * vektor2[i];
     }
@@ -50,7 +54,8 @@ double skalaris_szorzat(int n)
 int main()
 {
     std::cout << "Hello World!\n";
-    skalaris_szorzat(3);
+
+    cout << skalaris_szorzat();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
