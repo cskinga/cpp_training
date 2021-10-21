@@ -1,4 +1,4 @@
-// FGy_III_15.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_III_18.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -20,12 +20,24 @@ bool egesz_szam_e(string szam)
     return egesz;
 }
 
-int legnagyobb_ugras()
+bool prim_e(int szam)
+{
+    bool prim = true;
+    for (int i = 2; i < szam; i++)
+    {
+        if (szam % i == 0)
+        {
+            prim = false;
+        }
+    }
+    return prim;
+}
+
+int Primek_szama()
 {
     string szam;
     list<int> szamsor;
-    int ugras = 0;
-    int szamlalo;
+    int prim = 0;
     getline(cin, szam);
     while (!szam.empty())
     {
@@ -37,15 +49,19 @@ int legnagyobb_ugras()
     }
     for (list<int>::iterator it = szamsor.begin(); it != szamsor.end(); it++)
     {
-        szamlalo = *it;
-
+        if (prim_e(*it))
+        {
+            prim += 1;
+        }
     }
-    return szamlalo;
+    cout << prim;
+    return prim;
 }
 
 int main()
 {
     std::cout << "Hello World!\n";
+    Primek_szama();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
