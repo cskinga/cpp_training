@@ -22,10 +22,14 @@ bool egesz_szam_e(string szam)
 
 bool prim_e(int szam)
 {
-    bool prim = true;
+    bool prim = false;
     for (int i = 2; i < szam; i++)
     {
-        if (szam % i == 0)
+        if (szam > 1 && (szam == 2 || szam % i != 0))
+        {
+            prim = true;
+        }
+        else
         {
             prim = false;
         }
@@ -39,6 +43,10 @@ int Primek_szama()
     list<int> szamsor;
     int prim = 0;
     getline(cin, szam);
+    if (szam != "" && egesz_szam_e(szam) == true)
+    {
+        szamsor.push_back(stoi(szam));
+    }
     while (!szam.empty())
     {
         getline(cin, szam);
@@ -49,19 +57,26 @@ int Primek_szama()
     }
     for (list<int>::iterator it = szamsor.begin(); it != szamsor.end(); it++)
     {
-        if (prim_e(*it))
+        cout << "\n" << *it << "\t" << prim << "\n";
+        if (prim_e(*it) == 'true')
         {
             prim += 1;
         }
     }
-    cout << prim;
+    cout << "\n" << prim;
     return prim;
 }
 
 int main()
 {
     std::cout << "Hello World!\n";
-    Primek_szama();
+    cout << prim_e(0);
+    cout << prim_e(1);
+    cout << prim_e(2);
+    cout << prim_e(3);
+    cout << prim_e(4);
+    cout << prim_e(5);
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <list>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -25,8 +26,12 @@ int legnagyobb_ugras()
     string szam;
     list<int> szamsor;
     int ugras = 0;
-    int szamlalo;
+    int szamlalo = 0;
     getline(cin, szam);
+    if (szam != "" && egesz_szam_e(szam) == true)
+    {
+        szamsor.push_back(stoi(szam));
+    }
     while (!szam.empty())
     {
         getline(cin, szam);
@@ -37,15 +42,19 @@ int legnagyobb_ugras()
     }
     for (list<int>::iterator it = szamsor.begin(); it != szamsor.end(); it++)
     {
+        if (ugras < abs(szamlalo - *it))
+        {
+            ugras = abs(szamlalo - *it);
+        }
         szamlalo = *it;
-
     }
-    return szamlalo;
+    return ugras;
 }
 
 int main()
 {
     std::cout << "Hello World!\n";
+    cout << legnagyobb_ugras();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
