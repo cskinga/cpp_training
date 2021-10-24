@@ -44,15 +44,28 @@ double atlagos_kulonbseg()
     }
     for (list<int>::iterator it = szamsor.begin(); it != szamsor.end(); it++)
     {
-        for (int i = 1; i < szamsor.size(); i++)
-        {
-            osszeg += *it;
-            atlag = osszeg / i;
-            szoras = sqrt(pow(atlag - *it, 2) / i);
-        }
+        osszeg += *it;
     }
+    atlag = osszeg / szamsor.size();
+    osszeg = 0;
+    for (list<int>::iterator it = szamsor.begin(); it != szamsor.end(); it++)
+    {
+        osszeg += pow(*it - atlag, 2);
+    }
+    szoras = sqrt(osszeg / szamsor.size());
+    osszeg = 0;
+    atlag = 0;
+    szamlalo = *szamsor.begin();
+    for (list<int>::iterator it = szamsor.begin(); it != szamsor.end(); it++)
+    {
+        osszeg +=  *it - szamlalo;
+        szamlalo = *it;
+    }
+    atlag = osszeg / (szamsor.size() - 1);
+    cout << "\n" << atlag << "\n";
     return szoras;
 }
+
 int main()
 {
     std::cout << "Hello World!\n";

@@ -1,9 +1,10 @@
-// FGy_III_18.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FGy_III_17.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 #include <list>
 #include <string>
+
 
 using namespace std;
 
@@ -20,36 +21,12 @@ bool egesz_szam_e(string szam)
     return egesz;
 }
 
-bool prim_e(int szam)
-{
-    bool prim = false;
-    if (szam == 2)
-    {
-        prim = true;
-    }
-    else
-    {
-        for (int i = 2; i < szam; i++)
-        {
-            if (szam % i != 0)
-            {
-                prim = true;
-            }
-            else
-            {
-                prim = false;
-                break;
-            }
-        }
-    }
-    return prim;
-}
-
-int Primek_szama()
+int novekvo_szamsorozat_e()
 {
     string szam;
     list<int> szamsor;
-    int prim = 0;
+    int szamlalo = 0;
+    bool nagyobb = false;
     getline(cin, szam);
     if (szam != "" && egesz_szam_e(szam) == true)
     {
@@ -63,20 +40,25 @@ int Primek_szama()
             szamsor.push_back(stoi(szam));
         }
     }
+    szamlalo = *szamsor.begin();
     for (list<int>::iterator it = szamsor.begin(); it != szamsor.end(); it++)
     {
-        if (prim_e(*it))
+        if (szamlalo <= *it)
         {
-            prim += 1;
+            nagyobb = true;
         }
+        else
+        {
+            nagyobb = false;
+            break;
+        }
+        szamlalo = *it;
     }
-    return prim;
+    return nagyobb;
 }
-
 int main()
 {
-    std::cout << "Hello World!\n";
-    cout << Primek_szama();
+    cout << novekvo_szamsorozat_e();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
